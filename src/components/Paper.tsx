@@ -5,6 +5,7 @@ import { DND_ITEM_TYPE } from '../types'
 import { DINO_REFERENCE_WIDTH } from '../config'
 import PaperDragOverlay from './PaperDragOverlay'
 import DrawingCanvas, { type DrawingCanvasHandle } from './DrawingCanvas'
+import dino from '../assets/dino.png'
 
 interface Props {
   items: ItemData[]
@@ -89,7 +90,7 @@ export default function Paper({ items, draggingId, onItemDropped, onDragStart, o
 
   return (
     <div className="paper" ref={setRef}>
-      <img ref={dinoRef} src="/assets/dino.png" alt="Dino" className="dino" draggable={false} />
+      <img ref={dinoRef} src={dino} alt="Dino" className="dino" draggable={false} />
 
       {paperRefSize.w > 0 && paperRefSize.h > 0 && (
         <DrawingCanvas
